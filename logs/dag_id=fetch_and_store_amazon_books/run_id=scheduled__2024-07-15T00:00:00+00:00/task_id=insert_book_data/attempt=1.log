@@ -1,0 +1,279 @@
+[2024-11-11T10:51:06.083+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-11-11T10:51:06.104+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: fetch_and_store_amazon_books.insert_book_data scheduled__2024-07-15T00:00:00+00:00 [queued]>
+[2024-11-11T10:51:06.112+0000] {taskinstance.py:2613} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: fetch_and_store_amazon_books.insert_book_data scheduled__2024-07-15T00:00:00+00:00 [queued]>
+[2024-11-11T10:51:06.112+0000] {taskinstance.py:2866} INFO - Starting attempt 1 of 2
+[2024-11-11T10:51:06.120+0000] {taskinstance.py:2889} INFO - Executing <Task(PythonOperator): insert_book_data> on 2024-07-15 00:00:00+00:00
+[2024-11-11T10:51:06.126+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=341) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-11-11T10:51:06.127+0000] {standard_task_runner.py:72} INFO - Started process 359 to run task
+[2024-11-11T10:51:06.128+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'fetch_and_store_amazon_books', 'insert_book_data', 'scheduled__2024-07-15T00:00:00+00:00', '--job-id', '116', '--raw', '--subdir', 'DAGS_FOLDER/app.py', '--cfg-path', '/tmp/tmpz2clmlfc']
+[2024-11-11T10:51:06.129+0000] {standard_task_runner.py:105} INFO - Job 116: Subtask insert_book_data
+[2024-11-11T10:51:06.168+0000] {task_command.py:467} INFO - Running <TaskInstance: fetch_and_store_amazon_books.insert_book_data scheduled__2024-07-15T00:00:00+00:00 [running]> on host a277cbbf8348
+[2024-11-11T10:51:06.227+0000] {taskinstance.py:3132} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='fetch_and_store_amazon_books' AIRFLOW_CTX_TASK_ID='insert_book_data' AIRFLOW_CTX_EXECUTION_DATE='2024-07-15T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-15T00:00:00+00:00'
+[2024-11-11T10:51:06.230+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2024-11-11T10:51:06.230+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2024-11-11T10:51:06.230+0000] {logging_mixin.py:190} INFO - Current task name:insert_book_data state:running start_date:2024-11-11 10:51:06.105483+00:00
+[2024-11-11T10:51:06.231+0000] {logging_mixin.py:190} INFO - Dag name:fetch_and_store_amazon_books and current dag run status:running
+[2024-11-11T10:51:06.231+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-11-11T10:51:06.248+0000] {base.py:84} INFO - Retrieving connection 'books_connection'
+[2024-11-11T10:51:06.252+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with AWS - Second Edition: Acquire the skills to design and build AWS-based data transformation pipelines like a pro', 'Gareth Eagar', '41.', '4.3 out of 5 stars')
+[2024-11-11T10:51:06.253+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.261+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering 101', 'Paperback', '22.', '3.9 out of 5 stars')
+[2024-11-11T10:51:06.262+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.264+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Next Generation Data Management: Using Your Data Assets to Drive Mission Success', 'Dr Mark Brady', '38.', '4.4 out of 5 stars')
+[2024-11-11T10:51:06.265+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.271+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Observability for Data Engineering: Proactive strategies for ensuring data accuracy and addressing broken data pipelines', 'Michele Pinto', '36.', '3.7 out of 5 stars')
+[2024-11-11T10:51:06.273+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.277+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Fundamentals of Data Engineering: Plan and Build Robust Data Systems', 'Joe Reis', '42.', '4.7 out of 5 stars')
+[2024-11-11T10:51:06.279+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.281+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems', 'Martin Kleppmann', '41.', '4.7 out of 5 stars')
+[2024-11-11T10:51:06.282+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.285+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering Best Practices: Architect robust and cost-effective data solutions in the cloud era', 'Richard J. Schiller', '49.', '5.0 out of 5 stars')
+[2024-11-11T10:51:06.285+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.289+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with dbt: A practical guide to building a cloud-based, pragmatic, and dependable data platform with SQL', 'Roberto Zagni', '37.', '4.6 out of 5 stars')
+[2024-11-11T10:51:06.290+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.295+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ("Azure Data Factory Cookbook: A data engineer's guide to building and managing ETL and ELT pipelines with data integration", 'Dmitry Foshin', '51.', '4.1 out of 5 stars')
+[2024-11-11T10:51:06.296+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.300+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Fundamentals of Data Analytics: Learn Essential Skills, Embrace the Future, and Catapult Your Career in the Data-Driven World—A Comprehensive Guide to Data Literacy for Beginners', 'Russell Dawson', '17.', '4.7 out of 5 stars')
+[2024-11-11T10:51:06.301+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.306+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Modeling with Snowflake: A practical guide to accelerating Snowflake development using universal data modeling techniques', 'Serge Gershkovich', '36.', '4.8 out of 5 stars')
+[2024-11-11T10:51:06.307+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.309+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Pipelines Pocket Reference: Moving and Processing Data for Analytics', 'James Densmore', '17.', '4.5 out of 5 stars')
+[2024-11-11T10:51:06.310+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.313+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with Python: Work with massive datasets to design data models and automate data pipelines using Python', 'Paul Crickard', '37.', '4.1 out of 5 stars')
+[2024-11-11T10:51:06.314+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.317+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with Databricks Cookbook: Build effective data and AI solutions using Apache Spark, Databricks, and Delta Lake', 'Pulkit Chadha', '37.', '4.4 out of 5 stars')
+[2024-11-11T10:51:06.319+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.322+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Cracking the Data Engineering Interview: Land your dream job with the help of resume-building tips, over 100 mock questions, and a unique portfolio', 'Kedeisha Bryan', '26.', '4.4 out of 5 stars')
+[2024-11-11T10:51:06.323+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.325+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Ace the Data Engineering Interview: Questions and Answers for Python, SQL, Data Modeling and More', 'Sean Coyne', '24.', '3.8 out of 5 stars')
+[2024-11-11T10:51:06.326+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.330+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Getting Started with DuckDB: A practical guide for accelerating your data science, data analytics, and data engineering workflows', 'Simon Aubury', '41.', '5.0 out of 5 stars')
+[2024-11-11T10:51:06.331+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.333+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Microsoft Azure Data Engineering: A Microsoft Azure Cloud Data Engineering, Data Integration and Data Warehousing reference guide (The Data Engineering Series)', 'Kindle Edition', '0.', '4.2 out of 5 stars')
+[2024-11-11T10:51:06.334+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.339+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Essentials of Data Engineering', 'Dr. Mukesh Saini', '19.', '5.0 out of 5 stars')
+[2024-11-11T10:51:06.340+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.344+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with Apache Spark, Delta Lake, and Lakehouse: Create scalable pipelines that ingest, curate, and aggregate complex data in a timely and secure way', 'Manoj Kukreja', '46.', '3.9 out of 5 stars')
+[2024-11-11T10:51:06.345+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.350+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with Python cookbook: Learn to build efficient data pipelines using the Modern Cloud Data Stack', 'Adithyan Ramanujakootam', '32.', '5.0 out of 5 stars')
+[2024-11-11T10:51:06.350+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.353+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with AWS: Learn how to design and build cloud-based data transformation pipelines using AWS', 'Gareth Eagar', '49.', '4.4 out of 5 stars')
+[2024-11-11T10:51:06.354+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.358+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Azure Data Engineer Associate Certification Guide: Ace the DP-203 exam with advanced data engineering skills', 'Giacinto Palmieri', '37.', '4.3 out of 5 stars')
+[2024-11-11T10:51:06.359+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.364+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with AWS: Building Scalable Data Pipelines in the Cloud', 'May Sherry', '14.', '4.2 out of 5 stars')
+[2024-11-11T10:51:06.365+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.368+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ("Data: Principles To Practice - Volume 1 'Foundations': Essential Foundations: Key Concepts behind Data Architecture, Engineering and Analysis for Professionals", 'Mr Alex Holloway', '14.', '4.6 out of 5 stars')
+[2024-11-11T10:51:06.369+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.374+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Software Engineering for Data Scientists: From Notebooks to Scalable Systems', 'Catherine Nelson', '45.', '4.2 out of 5 stars')
+[2024-11-11T10:51:06.374+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.377+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with Google Cloud Platform: A practical guide to operationalizing scalable data analytics systems on GCP', 'Adi Wijaya', '39.', '4.7 out of 5 stars')
+[2024-11-11T10:51:06.379+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.382+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data-Driven Science and Engineering: Machine Learning, Dynamical Systems, and Control', 'Steven L. Brunton', '61.', '4.7 out of 5 stars')
+[2024-11-11T10:51:06.384+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.387+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('DATA ENGINEERING AND AI FOR BEGINNERS: Revolutionizing Data Processing and Analytics by Leveraging Artificial Intelligence for Efficient Input Collection, Storage, and Transformation (World of AI)', 'Kindle', '0.', '4.3 out of 5 stars')
+[2024-11-11T10:51:06.388+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.390+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with Google Cloud Platform: A guide to leveling up as a data engineer by building a scalable data platform with Google Cloud', 'Adi Wijaya', '40.', '4.8 out of 5 stars')
+[2024-11-11T10:51:06.391+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.394+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('The Data Engineering Handbook: We are Data Engineers, we make things happen, we pull rabbits out of hats, and transform raw, noisy data into gold.', 'Paperback', '9.', '5.0 out of 5 stars')
+[2024-11-11T10:51:06.394+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.399+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ("Ultimate Data Engineering with Databricks: Develop Scalable Data Pipelines Using Data Engineering's Core Tenets Such as Delta Tables, Ingestion, ... Security, and Scalability (English Edition)", 'Mayank Malhotra', '37.', '4.1 out of 5 stars')
+[2024-11-11T10:51:06.400+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.404+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('97 Things Every Data Engineer Should Know: Collective Wisdom from the Experts', 'Audible Audiobook', '0.', '4.2 out of 5 stars')
+[2024-11-11T10:51:06.406+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.409+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Machine Learning Engineering', 'Andriy Burkov', '39.', '4.7 out of 5 stars')
+[2024-11-11T10:51:06.410+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.413+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Python Data Engineering Resources: Forge Your Path to Success in Data Engineering, Machine Learning and AI', 'Vajo Lukic', '0.', '4.9 out of 5 stars')
+[2024-11-11T10:51:06.414+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.416+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Invisible Women: Data Bias in a World Designed for Men', 'Caroline Criado Perez', '15.', '4.6 out of 5 stars')
+[2024-11-11T10:51:06.417+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.419+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Prompt Engineering for Generative AI: Future-Proof Inputs for Reliable AI Outputs', 'James Phoenix', '53.', '4.5 out of 5 stars')
+[2024-11-11T10:51:06.420+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.421+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Mesh: Delivering Data-Driven Value at Scale', 'Audible Audiobook', '0.', '4.5 out of 5 stars')
+[2024-11-11T10:51:06.422+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.424+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Fundamentals of Data Visualization: A Primer on Making Informative and Compelling Figures', 'Claus O. Wilke', '49.', '4.6 out of 5 stars')
+[2024-11-11T10:51:06.425+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.427+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with AWS', 'May Sherry', '14.', '5.0 out of 5 stars')
+[2024-11-11T10:51:06.428+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.430+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Official Google Cloud Certified Professional Data Engineer Study Guide', 'Dan Sullivan', '33.', '4.5 out of 5 stars')
+[2024-11-11T10:51:06.431+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.433+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with Databricks', 'Kindle', '0.', '3.4 out of 5 stars')
+[2024-11-11T10:51:06.434+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.436+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Fundamentals of Analytics Engineering: An introduction to building end-to-end analytics solutions', 'Dumky De Wilde', '27.', '3.9 out of 5 stars')
+[2024-11-11T10:51:06.436+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.439+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Mastering AWS Data Engineering: A Step-by-Step Guide', 'Paperback', '12.', '5.0 out of 5 stars')
+[2024-11-11T10:51:06.440+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.442+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Privacy: A runbook for engineers', 'Nishant Bhajaria', '35.', '4.8 out of 5 stars')
+[2024-11-11T10:51:06.442+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.445+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Engineering with Alteryx: Helping data engineers apply DataOps practices with Alteryx', 'Paul Houghton', '44.', '4.3 out of 5 stars')
+[2024-11-11T10:51:06.446+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.449+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Data Science on AWS: Implementing End-to-End, Continuous AI and Machine Learning Pipelines', 'Chris Fregly', '27.', '4.4 out of 5 stars')
+[2024-11-11T10:51:06.450+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.453+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Modeling and Simulation in Python: An Introduction for Scientists and Engineers', 'Allen B. Downey', '32.', '4.5 out of 5 stars')
+[2024-11-11T10:51:06.454+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.456+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('GOOGLE CLOUD PROFESSIONAL DATA ENGINEER CERTIFICATION | MASTER THE EXAM: 10 PRACTICE TESTS, 500 RIGOROUS QUESTIONS, GAIN WEALTH OF INSIGHTS, EXPERT EXPLANATIONS AND ONE ULTIMATE GOAL', 'Mr Anand M', '29.', '5.0 out of 5 stars')
+[2024-11-11T10:51:06.457+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.460+0000] {sql.py:544} INFO - Running statement: 
+    INSERT INTO books (title, authors, price, rating)
+    VALUES (%s, %s, %s, %s)
+    , parameters: ('Analytics Engineering with SQL and dbt: Building Meaningful Data Models at Scale', 'Rui Pedro Machado', '41.', '3.9 out of 5 stars')
+[2024-11-11T10:51:06.461+0000] {sql.py:553} INFO - Rows affected: 1
+[2024-11-11T10:51:06.462+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-11-11T10:51:06.467+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-11-11T10:51:06.469+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=fetch_and_store_amazon_books, task_id=insert_book_data, run_id=scheduled__2024-07-15T00:00:00+00:00, execution_date=20240715T000000, start_date=20241111T105106, end_date=20241111T105106
+[2024-11-11T10:51:06.475+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2024-11-11T10:51:06.476+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2024-11-11T10:51:06.476+0000] {logging_mixin.py:190} INFO - Dag name:fetch_and_store_amazon_books queued_at:2024-11-11 10:50:59.972954+00:00
+[2024-11-11T10:51:06.476+0000] {logging_mixin.py:190} INFO - Task hostname:a277cbbf8348 operator:PythonOperator
+[2024-11-11T10:51:06.518+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-11-11T10:51:06.527+0000] {taskinstance.py:3895} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-11T10:51:06.528+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
