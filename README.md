@@ -1,5 +1,4 @@
 
-```markdown
 # Amazon Books Data Fetcher and Postgres Loader
 
 This project is an Airflow Directed Acyclic Graph (DAG) to fetch book data from Amazon, transform the data, and load it into a PostgreSQL database. The process includes three main tasks: fetching data (extract), cleaning the data (transform), and loading the cleaned data into a PostgreSQL database.
@@ -111,6 +110,3 @@ Licensed under the Apache License, Version 2.0. See the [LICENSE](LICENSE) file 
 - [Pandas](https://pandas.pydata.org/)
 - [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/)
 
-```
-
-This `README.md` outlines the core functionality of your project, the setup instructions, and a brief overview of the services and dependencies. Adjust it according to your needs.
